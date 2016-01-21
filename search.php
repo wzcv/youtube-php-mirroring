@@ -65,7 +65,7 @@ $nexturl='search.php?q='.$q.'&pageid='.$nexts;//下一页地址解析
 		
 	echo '<li id="'. $item->id->videoId .'" class="col-lg-3 col-sm-6 col-xs-6 youtube-video">
 		<a href="video.php?v='. $item->id->videoId .'" title="'. $item->snippet->title .'" target="_blank">
-			<img src="/thumbnail.php?vid='. $item->id->videoId .'" alt="'. $item->snippet->title .'" class="img-responsive" height="130px" />
+			<img src="./thumbnail.php?vid='. $item->id->videoId .'" alt="'. $item->snippet->title .'" class="img-responsive" height="130px" />
 			<h2>'. $item->snippet->title .'</h2>
 			<span class="glyphicon glyphicon-play-circle"></span>
 		</a>
@@ -78,7 +78,7 @@ $nexturl='search.php?q='.$q.'&pageid='.$nexts;//下一页地址解析
 		{
 			echo '<li id="'. $item->id->playlistId .'" class="col-lg-3 col-sm-6 col-xs-6 youtube-playlist">
 		<a href="video.php?v='. $item->id->playlistId .'" title="'. $item->snippet->title .'" target="_blank>
-			<img src="/thumbnail.php?vid='. $item->id->videoId  .'" alt="'. $item->snippet->title .'" class="img-responsive" height="130px" />
+			<img src="./thumbnail.php?vid='. $item->id->videoId  .'" alt="'. $item->snippet->title .'" class="img-responsive" height="130px" />
 			<h2>'. $item->snippet->title .'</h2>
 			<span class="glyphicon glyphicon-play-circle"></span>
 		</a>
