@@ -1,5 +1,5 @@
 # youtube-php-mirroring
-获取最新版请去官方网站 http://ytchina.cf/  下载，本页面不更新。
+获取最新版请去官方网站 http://ytchina.cf/（如打不开翻墙，或 https://ytchina.cf/）  下载，本页面不更新。
 Youtube镜像程序是一个用PHP开发的基于Youtube视频代理脚本。
 用来搭建Youtube视频镜像网站，利用海外主机或vps进行流量中转，实现youtube观看、无需数据库。只需要设置您申请的谷歌api就可以，内有申请说明以及程序的配置安装教程。
 国内下载节点
