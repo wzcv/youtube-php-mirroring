@@ -1,6 +1,7 @@
 <?php
 require 'header.php';
 $q=$_GET['q'];
+$q=str_replace(" ", "+", $q);
 
 $maxResults = 48;//每页显示数量 最大50
 $API_key = $youtube_api;
