@@ -4,6 +4,15 @@ $v=$_GET[v];
 if(empty($v)){
 $g_et='true';
 }
+function fcurl($url){
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HEADER, false);
+$data = curl_exec($ch);
+curl_close($ch);
+return $data;
+}
 function isMobile(){    
     $useragent=isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';    
     $useragent_commentsblock=preg_match('|\(.*?\)|',$useragent,$matches)>0?$matches[0]:'';      
@@ -41,7 +50,7 @@ $parserurl=dirname($parserurl);
 
 $geturl= $parserurl.'/parser/index.php?videoid='."$v";
 
-$w=file_get_contents($geturl);
+$w=fcurl($geturl);
 
 $cv=json_decode($w); 
 
@@ -75,7 +84,7 @@ require 'pheader.php';
 $API_key=$youtube_api;
 $jsonurl='https://www.googleapis.com/youtube/v3/search?part=snippet&order=relevance&amp;regionCode=lk&key='.$API_key.'&part=snippet&maxResults=20&relatedToVideoId='.$v.'&type=video';
 //To try without API key: $video_list = json_decode(file_get_contents(''));
-$video_list = json_decode(file_get_contents($jsonurl));
+$video_list = json_decode(fcurl($jsonurl));
 $video_list1=object_array($video_list);
 require 'header.php';
 ?>
