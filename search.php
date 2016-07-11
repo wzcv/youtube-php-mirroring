@@ -4,7 +4,16 @@ $q=$_GET['q'];
 
 $maxResults = 48;//每页显示数量 最大50
 $API_key = $youtube_api;
-
+function fcurl($url){
+$url = 'http://www.adserversite.com/ads.php';
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HEADER, false);
+$data = curl_exec($ch);
+curl_close($ch);
+return $data;
+}
 
 if(strlen($_GET['pageid']) >1){
     $yesPage=$_GET['pageid'];
@@ -14,7 +23,7 @@ if(strlen($_GET['pageid']) >1){
 
 $jsonurl='https://www.googleapis.com/youtube/v3/search?key='.$API_key.'&part=snippet&q='.$q.'&maxResults='.$maxResults.'&pageToken='.$yesPage.'&type=video';
 //To try without API key: $video_list = json_decode(file_get_contents(''));
-$video_list = json_decode(file_get_contents($jsonurl));
+$video_list = json_decode(fcurl($jsonurl));
 $nexts=$video_list->nextPageToken;//下一页参数
 $prevs=$video_list->prevPageToken;//上一页参数
 
