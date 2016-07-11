@@ -1,6 +1,15 @@
 <?php
 $v=$_GET[v];
 //判断设备
+function fcurl($url){
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HEADER, false);
+$data = curl_exec($ch);
+curl_close($ch);
+return $data;
+}
 function isMobile(){    
     $useragent=isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';    
     $useragent_commentsblock=preg_match('|\(.*?\)|',$useragent,$matches)>0?$matches[0]:'';      
@@ -35,7 +44,7 @@ else{
 require 'inc/parser.php';
 
 $geturl= $ym.$parser.'/index.php?videoid='."$v";
-$w=file_get_contents($geturl);
+$w=fcurl($geturl);
 
 $cv=json_decode($w); 
 
@@ -134,7 +143,7 @@ $vname1=substr($vname1, 0, 4);
 $API_key=$youtube_api;
 $jsonurl='https://www.googleapis.com/youtube/v3/search?key='.$API_key.'&part=snippet&q='.$vname1.'&maxResults=20&type=video';
 //To try without API key: $video_list = json_decode(file_get_contents(''));
-$video_list = json_decode(file_get_contents($jsonurl));
+$video_list = json_decode(fcurl($jsonurl));
 $video_list1=object_array($video_list);
 ?>
 <script src="js/jquery.js"></script>
