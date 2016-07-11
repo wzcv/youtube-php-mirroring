@@ -16,7 +16,7 @@
     <title><?php echo $title;?></title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <style>
