@@ -107,10 +107,7 @@ echo <<<EOT
 </div>
 <div class="col-xs-12">
 <h3>$vname</h3> 
-<!-- UY BEGIN -->
-<div id="uyan_frame"></div>
-<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js"></script>
-<!-- UY END -->
+
 EOT;
 }else{
     echo '<div class="alert alert-danger">错误！非法请求。</div>';
