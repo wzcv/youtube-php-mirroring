@@ -5,8 +5,7 @@ $q=$_GET['q'];
 $maxResults = 48;//每页显示数量 最大50
 $API_key = $youtube_api;
 function fcurl($url){
-$url = 'http://www.adserversite.com/ads.php';
-$ch = curl_init();
+
 curl_setopt($ch, CURLOPT_URL, $url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HEADER, false);
