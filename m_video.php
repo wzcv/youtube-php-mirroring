@@ -89,7 +89,7 @@ $video_list1=object_array($video_list);
 require 'header.php';
 ?>
 <script src="js/jquery.js"></script>
-<script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 <div class="wrapper container">
 <?php
