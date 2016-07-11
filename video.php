@@ -164,10 +164,7 @@ $video_list1=object_array($video_list);
 </script>
 <!--ckplayer配置结束--> 
  <h1><strong><?php echo $vname;?></strong></h1>    
-     <!-- UY BEGIN -->
-<div id="uyan_frame"></div>
-<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1941924"></script>
-<!-- UY END -->
+    
 </div>
 <div  class="pull-right" style="width:270px">
  <a href="#" class="list-group-item active">
