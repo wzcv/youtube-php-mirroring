@@ -21,7 +21,7 @@ if(strlen($_GET['pageid']) >1){
     $yesPage='';
 };
 
-$jsonurl='https://www.googleapis.com/youtube/v3/search?key='.$API_key.'&part=snippet&q='.$q.'&maxResults='.$maxResults.'&pageToken='.$yesPage.'&type=video';
+echo $jsonurl='https://www.googleapis.com/youtube/v3/search?key='.$API_key.'&part=snippet&q='.$q.'&maxResults='.$maxResults.'&pageToken='.$yesPage.'&type=video';
 //To try without API key: $video_list = json_decode(file_get_contents(''));
 $video_list = json_decode(fcurl($jsonurl));
 $nexts=$video_list->nextPageToken;//下一页参数
