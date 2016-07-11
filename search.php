@@ -25,6 +25,7 @@ if(strlen($_GET['pageid']) >1){
 //To try without API key: $video_list = json_decode(file_get_contents(''));
 $videolist=fcurl($jsonurl);
 $video_list = json_decode($videolist);
+print_r($video_list);
 $nexts=$video_list->nextPageToken;//下一页参数
 $prevs=$video_list->prevPageToken;//上一页参数
 
