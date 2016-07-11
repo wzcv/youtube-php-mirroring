@@ -24,8 +24,17 @@ THE SOFTWARE.
 *
 */
 require_once'../inc/info.php';
+function fcurl($url){
+$url = 'http://www.adserversite.com/ads.php';
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HEADER, false);
+$data = curl_exec($ch);
+curl_close($ch);
+return $data;
+}
 
-header('Access-Control-Allow-Origin: *');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -131,7 +140,7 @@ $API_key = $youtube_api;
 
 
 //To try without API key: $video_list = json_decode(file_get_contents(''));
-$video_list = json_decode(file_get_contents('https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId='.$channelId.'&maxResults='.$maxResults.'&key='.$API_key.''));
+$video_list = json_decode(fcurl('https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId='.$channelId.'&maxResults='.$maxResults.'&key='.$API_key.''));
 
 foreach($video_list->items as $item)
 {
