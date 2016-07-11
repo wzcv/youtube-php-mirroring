@@ -6,7 +6,7 @@ $q=str_replace(" ", "+", $q);
 $maxResults = 48;//每页显示数量 最大50
 $API_key = $youtube_api;
 function fcurl($url){
-
+$ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HEADER, false);
@@ -25,7 +25,7 @@ if(strlen($_GET['pageid']) >1){
 //To try without API key: $video_list = json_decode(file_get_contents(''));
 $videolist=fcurl($jsonurl);
 $video_list = json_decode($videolist);
-echo $videolist;
+
 $nexts=$video_list->nextPageToken;//下一页参数
 $prevs=$video_list->prevPageToken;//上一页参数
 
@@ -56,7 +56,7 @@ $nexturl='search.php?q='.$q.'&pageid='.$nexts;//下一页地址解析
  </style>
  
     <!-- Bootstrap Core JavaScript -->
-    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
         <div class="row">
             <div class="col-lg-12 text-center">
               
