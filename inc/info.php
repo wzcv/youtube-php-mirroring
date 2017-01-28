@@ -1,6 +1,6 @@
 <?php
 //
-$ym='https://wzcv.herokuapp.com/';//你的站点域名。不可为空，否则解析器无法工作
+$ym='https://wzce.000a.biz/youtube/';//你的站点域名。不可为空，否则解析器无法工作
 $parser='parser';//解析器目录,默认parser，如果本程序不是安装在根目录请加上上级路径，如abc/parser
 $home_v='UCcLK3j-XWdGBnt5bR9NJHaQ';//首页推荐视频用户身份标示
 $youtube_api='AIzaSyDikY9yfObZcKxk4VE09h3OmR8lL0VQTpc';//youtube视频API
